@@ -70,6 +70,16 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
+static const char *upbrightness[] = {"xbacklight","-inc","10",NULL};
+static const char *downbrightness[] = {"xbacklight","-dec","10",NULL};
+static const char *volup[] = {"wpctl","set-volume","@DEFAULT_SINK@","0.5%+",NULL};
+static const char *voldown[] = {"wpctl","set-volume","@DEFAULT_SINK@","0.5%-",NULL};
+static const char *mute[] = {"wpctl","set-mute","@DEFAULT_SINK@","toggle",NULL};
+static const char *play[] = {"playerctl","play-pause",NULL};
+static const char *stop[] = {"playerctl","stop",NULL};
+static const char *nextplay[] = {"playerctl","next",NULL};
+static const char *prevplay[] = {"playerctl","previous",NULL};
+
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -99,6 +109,15 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{0,                             XF86XK_MonBrightnessUp, spawn, {.v = upbrightness}},
+	{0,                             XF86XK_MonBrightnessDown, spawn, {.v = downbrightness}},
+	{0,                             XF86XK_AudioRaiseVolume, spawn, {.v = volup}},
+	{0,                             XF86XK_AudioLowerVolume, spawn, {.v = voldown}},
+	{0,                             XF86XK_AudioPlay, spawn, {.v = play}},
+	{0,                             XF86XK_AudioStop, spawn, {.v = stop}},
+	{0,                             XF86XK_AudioNext, spawn, {.v = nextplay}},
+	{0,                             XF86XK_AudioPrev, spawn, {.v = prevplay}},
+	{0,                             XF86XK_AudioMute, spawn, {.v = mute}},
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
