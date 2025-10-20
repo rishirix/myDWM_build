@@ -12,8 +12,8 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Roboto Condensed:size=6" };
-static const char dmenufont[]       = "Roboto Condensed:size=6";
+static const char *fonts[]          = { "Liberation Sans:size=6" };
+static const char dmenufont[]       = "Liberation Sans:size=6";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -70,7 +70,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "st", NULL };
 static const char *upbrightness[] = {"xbacklight","-inc","10",NULL};
 static const char *downbrightness[] = {"xbacklight","-dec","10",NULL};
 static const char *volup[] = {"wpctl","set-volume","@DEFAULT_SINK@","5%+",NULL};
