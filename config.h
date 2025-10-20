@@ -11,13 +11,13 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Liberation Sans:size=7" };
-static const char dmenufont[]       = "Liberation Sans:size=7";
+static const char *fonts[]          = { "Roboto:size=6" };
+static const char dmenufont[]       = "Roboto:size=6";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+static const char col_cyan[]        = "#6947a5";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -72,8 +72,8 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *upbrightness[] = {"xbacklight","-inc","10",NULL};
 static const char *downbrightness[] = {"xbacklight","-dec","10",NULL};
-static const char *volup[] = {"wpctl","set-volume","@DEFAULT_SINK@","0.5%+",NULL};
-static const char *voldown[] = {"wpctl","set-volume","@DEFAULT_SINK@","0.5%-",NULL};
+static const char *volup[] = {"wpctl","set-volume","@DEFAULT_SINK@","5%+",NULL};
+static const char *voldown[] = {"wpctl","set-volume","@DEFAULT_SINK@","5%-",NULL};
 static const char *mute[] = {"wpctl","set-mute","@DEFAULT_SINK@","toggle",NULL};
 static const char *play[] = {"playerctl","play-pause",NULL};
 static const char *stop[] = {"playerctl","stop",NULL};
