@@ -6,3 +6,6 @@
 - actualfullscreen
 - hide_vacant_tags
 - movestack
+- notitle
+- swapwindows
+- uselessgaps
